@@ -1,15 +1,20 @@
 body{
     margin: 0;
-    padding: 0.2rem;
+}
+.search-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .Container{
     display: grid;
     display: grid;
     height: 100vh;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows:0.2fr 1.5fr 1.2fr 0.8fr;
+    margin: 0.2rem;
+    grid-template-columns: 0.4fr 1fr 1fr 1fr;
+    grid-template-rows:0.6fr 1.5fr 1.2fr 0.8fr;
     grid-template-areas: 
-    "title title title title"
+    "sidebar title title title"
     "sidebar main main main" 
     "sidebar content1 content2 content3"
     "sidebar footer footer footer" ;
@@ -35,6 +40,7 @@ body{
     background: #838383 ;
     grid-area: main;
     justify-content: center;
+    align-items: center;
     padding: 0.4rem;
 }
 #title{

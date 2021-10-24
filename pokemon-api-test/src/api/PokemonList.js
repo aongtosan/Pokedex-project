@@ -1,6 +1,7 @@
 import react from 'react'
 import axios from 'axios'
 import { useState,useEffect } from 'react';
+import table from "../components/table.css"
 function PokemonList(props){
     const [pokemon,setPokemon] = useState([])
     const [pokemonProf,setPokemonProf] = useState([])
@@ -17,28 +18,28 @@ function PokemonList(props){
             isLoading(false)
             setPrevUrlPage(res.data.previous)
             setNextUrlPage(res.data.next)
-            setPokemon(res.data.results.map(p=>p.name))
-            setPokemonProf(res.data.results.map(p=>p.url))
+            setPokemonProf(res.data.results.map(p=>[ p.name,p.url]))
         })
         return () => cancel()
     },[currentpage])
     if(loading) return(<div>Loading....</div>);
     return(
-    <div>
-        {
-        pokemon.map(poke=>
-            <div>
-                {poke}
-            </div>
-        )
-        }
+    <div className="table">
+            {
+            pokemonProf.map(poke=>
+            <div className="data-row">
+                <div className="col1">{poke[0]}</div> 
+                <div className="col2">{poke[1]}</div> 
+            </div> 
+            )
+            }
 
-        <button onClick={()=>{
-            setUrlPage(prevpage)
-        }}>Previos</button>
-         <button onClick={()=>{
-             setUrlPage(nextpage)
-        }}>Next</button>
+            <button id="prevPage" onClick={()=>{
+                setUrlPage(prevpage)
+            }}>Previous</button>
+            <button id="nextPage" onClick={()=>{
+                setUrlPage(nextpage)
+            }}>Next</button>
     </div>
     )
 }

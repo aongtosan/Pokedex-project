@@ -1,0 +1,22 @@
+.table {
+    display: grid;
+    margin-top:20px;
+    background-color: green;
+    padding: 20px;
+}
+.data-row{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.8fr;
+    grid-template-areas: "col1" "col2";
+    background-color: rgb(104, 178, 207);
+}
+.col1{
+    grid-area: "col1";
+}
+.col2{
+    grid-area: "col1";
+}
