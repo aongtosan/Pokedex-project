@@ -22,23 +22,25 @@ function PokemonList(props){
         })
         return () => cancel()
     },[currentpage])
-    if(loading) return(<div>Loading....</div>);
+    if(loading) return(<div className="loading"> <img src="./images/loading.gif"/></div>);
     return(
     <div className="table">
             {
             pokemonProf.map(poke=>
             <div className="data-row">
                 <div className="col1">{poke[0]}</div> 
-                <div className="col2">{poke[1]}</div> 
+                <div className="col2"><a href={poke[1]}>show more data</a></div> 
             </div> 
             )
             }
 
             <button id="prevPage" onClick={()=>{
-                setUrlPage(prevpage)
+                if(prevpage==null) setUrlPage("https://pokeapi.co/api/v2/pokemon") 
+                else setUrlPage(prevpage)
             }}>Previous</button>
             <button id="nextPage" onClick={()=>{
-                setUrlPage(nextpage)
+                if(nextpage == null) setUrlPage("https://pokeapi.co/api/v2/pokemon") 
+                else setUrlPage(nextpage)
             }}>Next</button>
     </div>
     )

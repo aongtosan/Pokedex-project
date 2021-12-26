@@ -15,7 +15,7 @@ function App() {
                   <PokemonList/>
               </div>
               <div id="sidebar">Sidebar : region
-              <RegionList/>
+                  <RegionList/>
               </div>
               <div id="content1">Container1 </div>
               <div id="content2">Container2 </div>
