@@ -2,7 +2,7 @@ import React from 'react'
 
 function PokemonSearch() {
     return (
-        <div>
+        <div className='search-box'>
             
         </div>
     )

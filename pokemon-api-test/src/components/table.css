@@ -4,7 +4,33 @@
     background-color: green;
     padding: 20px;
 }
+.poke-show{
+    display: grid;
+    margin-top:20px;
+    background-color: green;
+    padding: 20px;
+    grid-template-columns: 1.2fr 1.5fr;
+    grid-template-areas: "data-group preview";
+}
+.poke-pic{
+    padding: 0.6vw;
+    text-align: center;
+}
+.poke-pic img{
+  height: 40vh;
+}
+.poke-preview{
+    display: flex;
+    grid-area: "preview";
+    background-color: #181817;
+    justify-content: center;
+    color: white;
+}
+.data-group{
+    grid-area: "data-group";
+}
 .data-row{
+    padding: 0.03vw;
     display: grid;
     justify-content: center;
     align-items: center;

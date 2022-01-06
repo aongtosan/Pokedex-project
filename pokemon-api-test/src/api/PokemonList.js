@@ -8,6 +8,7 @@ function PokemonList(props){
     const [currentpage,setUrlPage] = useState("https://pokeapi.co/api/v2/pokemon")
     const [prevpage,setPrevUrlPage] = useState()
     const [nextpage,setNextUrlPage] = useState()
+    const [selectPoke,setSelectPoke] = useState()
     const [loading,isLoading] = useState(true)
     useEffect(()=>{
         isLoading(true)
@@ -24,16 +25,25 @@ function PokemonList(props){
     },[currentpage])
     if(loading) return(<div className="loading"> <img src="./images/loading.gif"/></div>);
     return(
-    <div className="table">
-            {
+    <div className="poke-show">
+           <div className="data-group">
+           {
             pokemonProf.map(poke=>
-            <div className="data-row">
-                <div className="col1">{poke[0]}</div> 
-                <div className="col2"><a href={poke[1]}>show more data</a></div> 
-            </div> 
+
+                <div className="data-row">
+                    <div className="col1">{poke[0]}</div> 
+                    <div className="col2"><a href={poke[1]}>show more data</a></div> 
+                </div> 
+
             )
             }
-
+           </div>
+            <div className='poke-preview'>
+                <div className='poke-pic'>
+                    <div>Image Area</div>
+                    <img src="./images/loading.gif"/>
+                </div>
+            </div>
             <button id="prevPage" onClick={()=>{
                 if(prevpage==null) setUrlPage("https://pokeapi.co/api/v2/pokemon") 
                 else setUrlPage(prevpage)
