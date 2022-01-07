@@ -2,6 +2,8 @@ import '../components/App.css'
 import { useState,useEffect } from 'react';
 import PokemonList from '../api/PokemonList';
 import RegionList from '../api/RegionList';
+import PokemonSearch from '../api/PokemonSearch';
+
 function App() {
   const [pokemon,setPokemon] = useState([])
   return (
@@ -11,7 +13,7 @@ function App() {
                   Poke Data
                 </div>
               <div id="main">
-                <div className="search-box"> Main Area : default search <input type="text"/></div>
+                  <PokemonSearch/>
                   <PokemonList/>
               </div>
               <div id="sidebar">Sidebar : region

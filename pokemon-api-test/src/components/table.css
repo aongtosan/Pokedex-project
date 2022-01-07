@@ -8,6 +8,7 @@
     display: grid;
     margin-top:20px;
     background-color: green;
+    justify-content: center;
     padding: 20px;
     grid-template-columns: 1.2fr 1.5fr;
     grid-template-areas: "data-group preview";
@@ -17,7 +18,8 @@
     text-align: center;
 }
 .poke-pic img{
-  height: 40vh;
+  height: 50vh;
+  padding-top: 10vh;
 }
 .poke-preview{
     display: flex;
@@ -25,6 +27,7 @@
     background-color: #181817;
     justify-content: center;
     color: white;
+    border-radius: 30px;
 }
 .data-group{
     grid-area: "data-group";
@@ -35,14 +38,53 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 0.8fr;
-    grid-template-areas: "col1" "col2";
-    background-color: rgb(104, 178, 207);
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    color:white;
+    margin-bottom: 1px;
+    margin-right: 1px;
+}
+.data-row a{
+    text-decoration: none;
+    color: white;
+}
+.data-row button{
+    border-radius: 15px;
+    width: 37vw;
+    padding: 2px;
+    background-color: #212121;
+    border: none;
+    color: white;
+}
+.data-row button:hover{
+    background-image: linear-gradient(to right, rgba(255,153,102,1), rgb(255, 94, 98,1));
+    border-radius: 30px;
+    transition: 0.1s ease-out;
+    font-weight: bolder;
+    color: #212121;   
+}
+.poke-summary{
+    margin-top: 5vh;
 }
 .col1{
-    grid-area: "col1";
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+  font-size: 1rem;
 }
-.col2{
-    grid-area: "col1";
+.col1 img{
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    margin-right: 16vw;
 }
+#prevPage, #nextPage{
+    margin-top: 1vh;
+    height: 4vh;
+    border-radius: 20px;
+    border: none;
+    margin-left: 0.2vw;
+    margin-right: 0.2vw;
+}
+
