@@ -1,5 +1,5 @@
 # Pokedex-project
-test-pokemon-aoi
+test-pokemon-api
 this project is about implement Reactjs with PokeApi to create my own pokemon Encrycopedia
 for education purpose
 
